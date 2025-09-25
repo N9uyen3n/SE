@@ -1,0 +1,39 @@
+1. Mục tiêu
+Rèn luyện kỹ năng lập trình hướng đối tượng (OOP).
+Sử dụng cơ sở dữ liệu quan hệ (SQL) hoặc NoSQL để lưu trữ dữ liệu.
+Thiết kế kiến trúc 3 lớp (presentation – business logic – data access).
+Làm quen với React JS
+Tích hợp API/RESTful cơ bản để giao tiếp client-server.
+2. Yêu cầu chức năng
+
+Hệ thống phải có ít nhất các chức năng sau:
+Đăng ký, đăng nhập (phân biệt người dùng bình thường và admin).
+Tìm kiếm sách theo tên, tác giả, hoặc thể loại.
+Đăng ký mượn sách và trả sách.
+Quản lý danh mục sách: thêm, sửa, xóa.
+Xem danh sách người mượn và tình trạng mượn trả.
+Kiểm tra số lượng sách còn trong kho trước khi cho mượn.
+Ghi log hoạt động (ai mượn, mượn khi nào, trả khi nào).
+
+3. Yêu cầu kỹ thuật
+Java
+MySQL
+Ứng dụng web (Spring Boot, ASP.NET, Flask/Django), sử dụng React JS
+Dùng NodeJS tạo REST API cho các chức năng chính.
+Báo cáo ngắn mô tả kiến trúc, sơ đồ lớp, sơ đồ CSDL, hướng dẫn chạy chương trình.
+
+
+ 1. Phân tích yêu cầu: Đã đọc và phân tích các yêu cầu chức năng và kỹ thuật cho hệ thống quản lý thư viện.
+   2. Thiết kế cấu trúc OOP: Đã thiết kế và xây dựng một bộ khung lập trình hướng đối tượng bằng Java.
+   3. Xây dựng kiến trúc 3 lớp: Đã tạo ra cấu trúc thư mục và các lớp cơ bản cho 3 lớp kiến trúc:
+       * Lớp Model (Entity):
+           * User.java
+           * Book.java
+           * BorrowingRecord.java
+           * ActivityLog.java
+       * Lớp Data Access (Repository):
+           * BookRepository.java (dưới dạng interface)
+       * Lớp Business Logic (Service):
+           * BookService.java
+
+  Tôi sẽ dừng tại đây. Bạn có thể sử dụng bộ khung này để phát triển tiếp ứng dụng của mình.
