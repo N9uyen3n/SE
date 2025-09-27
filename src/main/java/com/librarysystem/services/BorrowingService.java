@@ -84,4 +84,8 @@ public class BorrowingService {
     public List<BorrowingRecord> getBorrowingHistory() {
         return borrowingRecordRepository.findAll();
     }
+
+    public List<BorrowingRecord> getHistoryForUser(User user) {
+        return borrowingRecordRepository.findByUser(user);
+    }
 }

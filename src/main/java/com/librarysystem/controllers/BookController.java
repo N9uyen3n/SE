@@ -4,6 +4,7 @@ import com.librarysystem.models.Book;
 import com.librarysystem.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,13 +33,14 @@ public class BookController {
         return bookService.searchBooks(keyword);
     }
 
-    // Note: In a real app, POST, PUT, DELETE endpoints should be secured
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public Book addBook(@RequestBody Book book) {
         return bookService.addBook(book);
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Book> updateBook(@PathVariable Integer id, @RequestBody Book bookDetails) {
         try {
             Book updatedBook = bookService.updateBook(id, bookDetails);
@@ -49,6 +51,7 @@ public class BookController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteBook(@PathVariable Integer id) {
         bookService.deleteBook(id);
         return ResponseEntity.noContent().build();
